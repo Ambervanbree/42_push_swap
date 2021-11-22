@@ -6,7 +6,7 @@
 /*   By: avan-bre <avan-bre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 09:40:09 by avan-bre          #+#    #+#             */
-/*   Updated: 2021/11/07 15:20:18 by avan-bre         ###   ########.fr       */
+/*   Updated: 2021/11/22 12:14:50 by avan-bre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ static int	split_argument(int **table, char *string, int *size)
 	char	**arg_table;
 	int		i;
 
+	if (ft_strncmp(string, " ", ft_strlen(string)) == 0)
+		return (0);
 	arg_table = ft_split(string, ' ');
 	*size = 0;
 	while (arg_table[*size] != NULL)

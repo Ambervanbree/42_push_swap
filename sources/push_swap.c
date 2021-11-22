@@ -6,7 +6,7 @@
 /*   By: avan-bre <avan-bre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 14:00:16 by avan-bre          #+#    #+#             */
-/*   Updated: 2021/11/07 13:52:08 by avan-bre         ###   ########.fr       */
+/*   Updated: 2021/11/22 12:08:07 by avan-bre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,9 @@ int	main(int argc, char *argv[])
 		return (only_one_argument(argv[1]));
 	data.table = 0;
 	data.size = parse_arguments(&data.table, argc, argv);
-	if (data.size == 0 | table_to_index(&data) == 0 || create_list(&data) == 0)
+	if (data.size == 0)
+		return (1);
+	if (table_to_index(&data) == 0 || create_list(&data) == 0)
 	{
 		free_all(&data);
 		return (1);
